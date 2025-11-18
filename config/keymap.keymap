@@ -14,6 +14,22 @@
         };
     };
 
+    macros {
+        list: list {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp SPACE &kp MINUS &kp SPACE &kp LANGUAGE_1>;
+            label = "LIST";
+        };
+
+        email: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp C &kp O &kp H &kp K &kp I &kp N0 &kp N3 &kp N0 &kp N5 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -49,11 +65,11 @@
 
         layer_3 {
             bindings = <
-&trans  &trans          &trans     &trans                &trans                 &trans                           &trans            &trans     &trans         &trans     &trans      &trans
-&trans  &kp F11         &kp F12    &kp F3                &kp LC(UP_ARROW)       &trans                           &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
-&trans  &kp LEFT_SHIFT  &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LC(LS(TAB))  &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
-&trans  &kp LA(Z)       &kp LA(X)  &kp LG(LC(V))         &kp LA(SPACE)          &kp LC(TAB)      &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
-&trans  &trans          &trans     &trans                &kp DELETE             &kp TAB          &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+&trans  &trans          &trans     &trans                &trans                 &trans                           &trans                    &trans                 &trans        &trans         &trans         &trans
+&trans  &kp F11         &kp F12    &list                 &kp LC(UP_ARROW)       &trans                           &email                    &kp LEFT_ARROW         &kp UP_ARROW  &kp RIGHT      &kp LC(LG(Q))  &trans
+&trans  &kp LEFT_SHIFT  &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LC(LS(TAB))  &trans  &trans  &kp LG(NON_US_BACKSLASH)  &kp LC(LEFT)           &kp DOWN      &kp LC(RIGHT)  &trans         &trans
+&trans  &kp LA(Z)       &kp LA(X)  &kp LG(LC(V))         &kp LA(SPACE)          &kp LC(TAB)      &trans  &trans  &kp LG(LS(N))             &kp LC(RIGHT_BRACKET)  &kp GRAVE     &trans         &trans         &trans
+&trans  &trans          &trans     &trans                &kp DELETE             &kp TAB          &trans  &trans  &trans                    &trans                 &trans        &trans         &trans         &trans
             >;
         };
     };
