@@ -28,6 +28,13 @@
             bindings = <&none &kp C &kp O &kp H &kp K &kp I &kp N0 &kp N3 &kp N0 &kp N5 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "NEW_MACRO";
         };
+
+        phone: address {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N0 &kp N8 &kp N0 &kp N5 &kp N3 &kp N5 &kp N9 &kp N5 &kp N1 &kp N5 &kp N0>;
+            label = "ADDRESS";
+        };
     };
 
     keymap {
@@ -66,7 +73,7 @@
         layer_3 {
             bindings = <
 &trans  &trans          &trans     &trans                &trans                 &trans                           &trans                    &trans                 &trans        &trans         &trans         &trans
-&trans  &kp F11         &kp F12    &list                 &kp LC(UP_ARROW)       &trans                           &email                    &kp LEFT_ARROW         &kp UP_ARROW  &kp RIGHT      &kp LC(LG(Q))  &trans
+&trans  &kp F11         &kp F12    &list                 &kp LC(UP_ARROW)       &phone                           &email                    &kp LEFT_ARROW         &kp UP_ARROW  &kp RIGHT      &kp LC(LG(Q))  &trans
 &trans  &kp LEFT_SHIFT  &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LC(LS(TAB))  &trans  &trans  &kp LG(NON_US_BACKSLASH)  &kp LC(LEFT)           &kp DOWN      &kp LC(RIGHT)  &trans         &trans
 &trans  &kp LA(Z)       &kp LA(X)  &kp LG(LC(V))         &kp LA(SPACE)          &kp LC(TAB)      &trans  &trans  &kp LG(LS(N))             &kp LC(RIGHT_BRACKET)  &kp GRAVE     &trans         &trans         &trans
 &trans  &trans          &trans     &trans                &kp DELETE             &kp TAB          &trans  &trans  &trans                    &trans                 &trans        &trans         &trans         &trans
