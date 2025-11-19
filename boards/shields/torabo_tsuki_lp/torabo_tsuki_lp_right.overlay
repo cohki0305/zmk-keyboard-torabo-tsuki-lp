@@ -1,9 +1,28 @@
-#include "torabo_tsuki_lp.dtsi"
+include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_listener {
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    // ベースの挙動：全レイヤーでカーソル移動
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+    >;
+
+    // ★ Layer3 のときだけスクロールにする
+    scroller {
+        // スクロールにしたいレイヤー番号
+        layers = <3>;
+
+        // XYの動きをスクロールイベントに変換
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            // 必要ならスクロール速度調整も追加できる：
+            // &zip_scroll_scaler 1 128
+        >;
+
+        // 必要なら他の override / base processor も続けて処理
+        // process-next;
+    };
 };
 
 &size_s_transform {
