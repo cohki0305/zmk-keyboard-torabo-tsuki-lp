@@ -17,7 +17,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             // 必要ならスクロール速度調整も追加できる：
-            &zip_scroll_scaler 1 16
+            &zip_scroll_scaler 1 20
         >;
 
         // 必要なら他の override / base processor も続けて処理
