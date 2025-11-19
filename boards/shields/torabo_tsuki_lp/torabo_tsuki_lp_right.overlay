@@ -3,25 +3,23 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_listener {
-    // ベースの挙動：全レイヤーでカーソル移動
+    // ベースの挙動（変更なし）
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
 
-    // ★ Layer3 のときだけスクロールにする
     scroller {
-        // スクロールにしたいレイヤー番号
         layers = <3>;
-
-        // XYの動きをスクロールイベントに変換
         input-processors = <
+            // 1. まず横方向(X)の動きを「0」にして消す (分子0 / 分母1)
+            &zip_x_scaler 0 1
+            
+            // 2. 残った縦方向(Y)だけをスクロールに変換する
             &zip_xy_to_scroll_mapper
-            // 必要ならスクロール速度調整も追加できる：
+            
+            // 3. 速度調整（必要に応じて数字を変更）
             &zip_scroll_scaler 1 24
         >;
-
-        // 必要なら他の override / base processor も続けて処理
-        // process-next;
     };
 };
 
