@@ -25,42 +25,6 @@
     };
 };
 
-/ {
-    behaviors {
-        /* 
-           独自のホームポジションモディファイア（Home Row Mods）を定義
-           &mt の代わりにこれを使います 
-        */
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            
-            /* 1. タップ・ホールドの判定時間 */
-            tapping-term-ms = <200>; // 300は長すぎます。一般的に200ms前後が推奨
-            
-            /* 2. 高速入力時の挙動 */
-            quick-tap-ms = <175>;    // 前のキーから素早く連打した場合は「タップ」とみなす
-            require-prior-idle-ms = <150>; // 直前にキー入力があった場合は、ホールドせず「タップ」にする
-            
-            /* 3. フレーバー */
-            flavor = "balanced"; // require-prior-idleがある場合は balanced の方が安定することが多いです
-            
-            bindings = <&kp>, <&kp>;
-            
-            /* 
-               ★ 4. 最重要：左右分離（Positional Hold-Tap） 
-               Aキー（左手）を押している間、
-               「右手のキー」を押した時だけShiftにする設定です。
-               ここに「右手のキー番号一覧」を記述する必要があります。
-            */
-            // hold-trigger-key-positions = <6 7 8 9 10 ...>; // ←自分のキーボードの右手キーのIDを入れる
-            // hold-trigger-on-release; // 誤爆が多いならこのオプションも検討
-        };
-    };
-};
-
-
 &size_s_transform {
     col-offset = <7>;
 };
