@@ -25,6 +25,17 @@
     };
 };
 
+&mt {
+    // まずはデフォルトと同じ 200ms で様子見
+    tapping-term-ms = <200>;
+
+    // タップ優先フレーバー（他キーの「割り込み」で hold になりにくい）
+    flavor = "tap-preferred";
+
+    // さらに、「直前に打鍵があったら必ずタップ」にする例（必要なら）
+    // require-prior-idle-ms = <125>;
+}
+
 &size_s_transform {
     col-offset = <7>;
 };
