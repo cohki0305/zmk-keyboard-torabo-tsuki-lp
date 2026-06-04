@@ -11,6 +11,7 @@ manifest:
       import: app/west.yml
     - name: zmk-component-bmp-boost
       remote: sekigon-gonnoc
+      revision: 7ac6fca3919110f0e1b9520c33656cde9c0ed77a
       import: west.yml
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
@@ -20,7 +21,7 @@ manifest:
       revision: main
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: sekigon-gonnoc
-      revision: main
+      revision: f79db1d0a9a810b926c17a5a28e96387728ed6f4
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
