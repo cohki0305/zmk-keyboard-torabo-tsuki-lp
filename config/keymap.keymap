@@ -86,11 +86,11 @@
 
         layer_3 {
             bindings = <
-&trans  &trans             &trans           &trans                &trans                 &trans                                  &trans             &trans                 &trans        &trans         &trans         &trans
-&trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &list                 &kp LC(UP_ARROW)       &phone                                  &email             &kp LEFT_ARROW         &kp UP_ARROW  &kp RIGHT      &kp LC(LG(Q))  &trans
-&trans  &kp LEFT_SHIFT     &kp C_MUTE       &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LC(LS(TAB))  &trans  &trans         &kp LG(BACKSLASH)  &kp LC(LEFT)           &kp DOWN      &kp LC(RIGHT)  &trans         &trans
-&trans  &kp LA(Z)          &kp LA(X)        &kp LG(LC(V))         &kp LA(SPACE)          &kp LC(TAB)      &trans  &trans         &kp LG(LS(N))      &kp LC(RIGHT_BRACKET)  &kp GRAVE     &kp RA(LC(O))  &kp LC(RA(P))  &trans
-&trans  &kp LG(MINUS)      &kp LG(EQUAL)    &trans                &trans                 &trans           &trans  &kp LC(LA(A))  &kp LC(LA(B))      &trans                 &trans        &kp LA(LC(W))  &kp LC(LA(T))  &trans
+&trans  &trans             &trans           &trans                &trans                 &trans                              &trans             &trans                 &trans        &trans         &trans         &trans
+&trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &list                 &kp LC(UP_ARROW)       &phone                              &email             &kp LEFT_ARROW         &kp UP_ARROW  &kp RIGHT      &kp LC(LG(Q))  &trans
+&trans  &kp LEFT_SHIFT     &kp C_MUTE       &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LC(LS(TAB))  &trans  &trans     &kp LG(BACKSLASH)  &kp LC(LEFT)           &kp DOWN      &kp LC(RIGHT)  &trans         &trans
+&trans  &kp LA(Z)          &kp LA(X)        &kp LG(LC(V))         &kp LA(SPACE)          &kp LC(TAB)      &trans  &trans     &kp LG(LS(N))      &kp LC(RIGHT_BRACKET)  &kp GRAVE     &kp RA(LC(O))  &kp LC(RA(P))  &trans
+&trans  &kp LG(MINUS)      &kp LG(EQUAL)    &trans                &trans                 &trans           &trans  &kp LC(B)  &trans             &trans                 &trans        &kp LA(LC(W))  &kp LC(LA(T))  &trans
             >;
         };
     };
